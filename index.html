@@ -1,0 +1,91 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2639
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 AppleColorEmoji;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="en">\
+<head>\
+  <meta charset="UTF-8">\
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+  <title>Happy Thanksgiving!</title>\
+  <style>\
+    body \{\
+      margin: 0;\
+      padding: 0;\
+      font-family: 'Arial', sans-serif;\
+      display: flex;\
+      justify-content: center;\
+      align-items: center;\
+      height: 100vh;\
+      background-color: #f7e5d6;\
+      overflow: hidden;\
+    \}\
+\
+    h1 \{\
+      font-size: 3rem;\
+      color: #d2691e;\
+      text-align: center;\
+      animation: fadeIn 2s ease-in-out;\
+    \}\
+\
+    .subtext \{\
+      font-size: 1.5rem;\
+      color: #8b4513;\
+      margin-top: 1rem;\
+    \}\
+\
+    .falling-leaf \{\
+      position: absolute;\
+      animation: fall 5s linear infinite;\
+    \}\
+\
+    @keyframes fadeIn \{\
+      from \{\
+        opacity: 0;\
+      \}\
+      to \{\
+        opacity: 1;\
+      \}\
+    \}\
+\
+    @keyframes fall \{\
+      0% \{ transform: translateY(-100px) rotate(0); \}\
+      100% \{ transform: translateY(100vh) rotate(360deg); \}\
+    \}\
+\
+    #leaf-container \{\
+      position: absolute;\
+      width: 100%;\
+      height: 100%;\
+    \}\
+  </style>\
+</head>\
+<body>\
+  <div>\
+    <h1>Happy Thanksgiving!</h1>\
+    <p class="subtext">From Ale and Kenny 
+\f1 \uc0\u55358 \u56707 
+\f0 </p>\
+  </div>\
+\
+  <div id="leaf-container"></div>\
+\
+  <script>\
+    // Adding falling leaves animation\
+    const leafContainer = document.getElementById('leaf-container');\
+    for (let i = 0; i < 10; i++) \{\
+      const leaf = document.createElement('img');\
+      leaf.src = 'https://upload.wikimedia.org/wikipedia/commons/8/82/Maple_leaf.png'; // Replace with a better leaf image URL if desired\
+      leaf.className = 'falling-leaf';\
+      leaf.style.left = Math.random() * window.innerWidth + 'px';\
+      leaf.style.animationDuration = Math.random() * 2 + 4 + 's'; // Varying fall speed\
+      leaf.style.transform = `rotate($\{Math.random() * 360\}deg)`;\
+      leafContainer.appendChild(leaf);\
+    \}\
+  </script>\
+</body>\
+</html>\
+}
